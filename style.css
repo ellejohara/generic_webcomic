@@ -1,0 +1,359 @@
+/*
+Theme Name: Generic Webcomic
+Theme URI: https://github.com/ellejohara/generic_webcomic
+Author: ellejohara
+Author URI: http://ellejohara.com/
+Description: A super generic webcomic theme for WordPress 6+
+Tags: comics, webcomics
+Version: 22.7
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+A gift from me to the webcomics community. Put your comics on your own domain!
+*/
+
+/* RESET */
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+h1 { font-size: 1.3em; }
+h2 { font-size: 1.2em; }
+h3 { font-size: 1.1em; }
+h4 { font-size: 1.0em; }
+h5 { font-size: 0.9em; }
+h6 { font-size: 0.8em; }
+
+.cf:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.alignleft { float: left; }
+.alignright { float: right; }
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+/* VARIABLES */
+html {
+	--bgcolor: #fafaf8;
+	--text-color: #444;
+    --highlight-color: #6c0;
+	--header-height: 30vh;
+	--header-bgimage: url('images/header.png');
+	--link-color: #06c;
+	--link-hover: #c00;
+	--link-active: #60c;
+    --title-align: left;
+    --menu-align: flex-start;
+    --footer-align: left;
+}
+
+/* CORE */
+body {
+	margin: 0 auto;
+	padding: 0 2em;
+    min-width: 320px;
+	font-family:
+		"Avenir Next",
+		Avenir,
+		"Century Gothic",
+		"Helvetica Neue Light",
+		"Helvetica Neue",
+		Helvetica,
+		"Lucida Grande",
+		Arial,
+		sans-serif;
+	background-color: var(--bgcolor);
+	color: var(--text-color);
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+a:visited, a:link { color: var(--link-color); }
+a:hover { color: var(--link-hover); }
+a:active { color: var(--link-active); }
+
+img { box-shadow: 0 2px 3px rgba(0,0,0,0.5); }
+
+nav ul li {
+	display: inline;
+}
+
+time {
+    font-size: 0.8em;
+    color: var(--highlight-color);
+}
+
+hr {
+    margin: 0.5em 0;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    color: var(--highlight-color);
+    background: var(--highlight-color);
+}
+
+/* LAYOUT */
+#container {
+	margin: 0 auto;
+	width: 100%;
+    height: 100%;
+	max-width: 960px;
+}
+
+#header {
+	width: 100%;
+    margin-bottom: 1.5em;
+    position: relative;
+	height: var(--header-height);
+    max-height: 500px;
+	background:
+		linear-gradient(
+			180deg,
+			rgba(255,255,255,0) 0%,
+			rgba(255,255,255,0) 50%,
+			var(--bgcolor) 96%),
+			var(--header-bgimage);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	text-shadow: 0px 0px 3px var(--bgcolor);
+}
+
+#header img {
+    height: 100%;
+    width: 100%;
+    max-height: calc(var(--header-height) - 15%);
+    object-fit: contain;
+    object-position: var(--title-align);
+    box-shadow: none;
+}
+
+#header nav {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: var(--menu-align);
+}
+
+#header nav ul li {
+    padding: 0 0.25em;
+}
+
+#gallery, #image, #content {
+    padding: 0.25em 0;
+}
+
+#gallery figure {
+    float: left;
+}
+
+#gallery figure, #image figure {
+    margin: 1% 0;
+}
+
+#gallery figure img {
+    aspect-ratio: 7 / 9;
+    object-fit: cover;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#content main {
+    padding-right: 1.5em;
+    box-sizing: border-box;
+    flex-basis: 66.6%;
+}
+
+#content main .entry {
+    padding: 0.25em 0; 
+}
+
+#content main .entry p {
+    padding: 0.5em 0;
+}
+
+#content main .entry p:last-child {
+    padding-bottom: 0.5em;
+}
+
+#content main .entry.news p img {
+    margin: 1em auto;
+    display: block;
+}
+
+#content main .entry.news p img {
+    margin: 0 auto;
+    display: block;
+}
+
+#content main .entry ol {
+    list-style: none;
+    counter-reset: chapter-count;
+}
+
+#content main .entry ol li {
+    counter-increment: chapter-count;
+}
+
+#content main .entry ol li::before {
+    content: counter(chapter-count);
+    padding-right: 1em;
+}
+
+#sidebar {
+    padding: 1em;
+    box-sizing: border-box;
+    box-shadow: 0 1px 2px black;
+    display: block;
+    border-radius: 1em;
+    flex-basis: 33.3%;
+    background-color: rgba(0,0,0,0.05);
+}
+
+#sidebar .sidebarsection {
+    margin-bottom: 1em;
+}
+
+nav#navigation {
+	padding: 1.5em 0;
+	text-align: center;
+}
+
+nav#navigation ul li a, nav#navigation ul li span {
+    margin: 0 0.25em;
+	padding: 0 0.5em;
+	border: 1px solid;
+	border-radius: 0.35em;
+	font-size: 2.5em;
+}
+
+nav#navigation ul li span {
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+.bookmarks ul li ul {
+    margin: 0.5em 0;
+}
+
+.bookmarks ul li ul li {
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+}
+
+#footer {
+	padding: 0.5em 0;
+    text-align: var(--footer-align);
+}
+
+#footer p span.copy {
+    color: var(--highlight-color);
+    font-weight: bold;
+}
+
+#container > #footer {
+    position: sticky;
+    top: 100vh;
+}
+
+.highlight {
+    color: var(--highlight-color);
+}
+
+/* MEDIA QUERIES */
+/* DESKTOP */
+@media (min-width: 1000px) {
+	#gallery figure {
+        width: 23.5%;
+        margin-right: 2%;
+	}
+    #gallery figure:nth-child(4n) {
+        margin-right: 0;
+    }
+}
+
+/* TABLET */
+@media (min-width: 600px) and (max-width: 999px) {
+	#gallery figure {
+		width: 31.3%;
+        margin-right: 3%;
+	}
+    #gallery figure:nth-child(3n) {
+        margin-right: 0;
+    }
+    
+    #content main {
+        flex-basis: 60%;
+    }
+    
+    #sidebar {
+        flex-basis: 40%;
+    }
+}
+
+/* PHONE */
+@media (max-width: 599px) {
+    body {
+        padding: 0 1em;
+    }
+    #header {
+        height: calc(var(--header-height) * 0.75);
+    }
+    #header nav {
+        font-size: 1.15em;
+    }
+	#gallery figure {
+		width: 48%;
+        margin-right: 4%;
+	}
+    #gallery figure:nth-child(2n) {
+        margin-right: 0;
+    }
+    #content main {
+        padding: 0 0.25em 1em;
+        flex-grow: 1;
+        flex-basis: 100%;
+    }
+    #sidebar {
+        flex-grow: 1;
+        flex-basis: 100%;
+    }
+    #navigation {
+        font-size: 0.85em;
+    }
+}
