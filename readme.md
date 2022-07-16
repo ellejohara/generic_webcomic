@@ -28,7 +28,7 @@ A number of comics creators have gotten frustrated with webcomics platforms rece
 
 ## Copyright
 
-Generic Webcomic WordPress Theme copyright 2022 by Astrid Lydia Johannsen dba 'ellejohara'. It is distributed under the terms of the GNU GPL v3.
+Generic Webcomic WordPress Theme copyright 2022 by ellejohara. It is distributed under the terms of the GNU GPL v3.
 
 Header images created by ellejohara.
 
@@ -38,8 +38,8 @@ Font used for header title image from [Southills Studio](https://www.southills.x
 
 ## Changelog
 
-1.0
+1.0.0
 
-- Released 22 July 2022
+- Released 15 July 2022
 
 Initial release
