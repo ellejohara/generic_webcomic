@@ -1,8 +1,11 @@
 # Generic Webcomic
 
 **Contributors:** ellejohara
+
 **Requires at least:** WordPress 6.0
+
 **Tested up to:** WordPress 6.0
+
 **Requires:** PHP 7 or later
 
 License: GNU GPL v3 or later
