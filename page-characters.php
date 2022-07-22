@@ -22,7 +22,18 @@ $page_entry = str_replace( ']]>', ']]&gt;', $page_entry );
 endwhile;
 else:
 endif;
+?>
 
+<?php if($page_entry): ?>
+<section class="page-entry">
+<h1 class="highlight">Characters</h1>
+<div class="entry">
+<?php echo $page_entry; ?>
+</div><!-- .entry -->
+</section>
+<?php endif; ?>
+
+<?php
 $attachments = array(
 	'order' => 'ASC',
 	'orderby' => 'menu_order',
@@ -36,15 +47,6 @@ $attachments = array(
 query_posts($attachments);
 if(have_posts()): while(have_posts()): the_post();
 ?>
-
-<?php if($page_entry): ?>
-<section class="page-entry">
-<h1 class="highlight">Characters</h1>
-<div class="entry">
-<?php echo $page_entry; ?>
-</div><!-- .entry -->
-</section>
-<?php endif; ?>
 
 <article class="cf">
 <figure>
