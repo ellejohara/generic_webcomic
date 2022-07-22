@@ -9,17 +9,6 @@
  *
  */
 
-// admin javascript faff
-function jo_post_format_metabox_selection($hook) {
-    if('post.php' == $hook || 'post-new.php' == $hook) {
-        wp_enqueue_script(
-            'jo_post_format_metabox_js',
-            get_template_directory_uri().'/js/post-format-metabox.js'
-        );
-    }
-}
-add_action('admin_enqueue_scripts', 'jo_post_format_metabox_selection');
-
 // if news post, set format to 'aside' automatically
 function jo_set_news_aside($postID) {
     if(has_post_format('aside', $postID) || !has_term('news', 'category', $postID)) {
@@ -233,4 +222,15 @@ require_once('jo-customize/jo-customize.php');
 
 /* Attachments Metabox */
 require_once('jo-attachments/jo-attachments.php');
+
+// admin javascript faff
+function jo_post_format_metabox_selection($hook) {
+    if('post.php' == $hook || 'post-new.php' == $hook) {
+        wp_enqueue_script(
+            'jo_post_format_metabox_js',
+            get_template_directory_uri().'/js/post-format-metabox.js'
+        );
+    }
+}
+add_action('admin_enqueue_scripts', 'jo_post_format_metabox_selection');
 ?>

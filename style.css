@@ -194,16 +194,16 @@ hr {
     object-fit: cover;
 }
 
-#characters .page-entry, #gallery .page-entry {
+#characters .page-entry, main .page-entry {
     margin-bottom: 1em;
     display: block;
 }
 
-#characters .page-entry .entry, #gallery .page-entry .entry {
+#characters .page-entry .entry, main .page-entry .entry {
     padding: 0.25em 0;
 }
 
-#characters .page-entry .entry p, #gallery .page-entry .entry p {
+#characters .page-entry .entry p, main .page-entry .entry p {
     padding: 0.5em 0;
 }
 

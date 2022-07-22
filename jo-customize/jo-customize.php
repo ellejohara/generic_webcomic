@@ -8,9 +8,7 @@
  * @license		GNU General Public License v3 or later
  *
  */
-?>
 
-<?php
 function jo_customize_register($wp_customize) {
     $wp_customize->add_section('jo_colors', array(
         'title' => 'Colors',

@@ -8,9 +8,7 @@
  * @license		GNU General Public License v3 or later
  *
  */
-?>
 
-<?php
 function jo_images_metabox_enqueue($hook) {
     if('post.php' == $hook || 'post-new.php' == $hook) {
         wp_enqueue_style('jo-images-metabox', get_template_directory_uri().'/jo-attachments/jo-attachments.css');

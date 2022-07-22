@@ -12,7 +12,7 @@
 
 <?php get_header(); ?>
 
-<section id="gallery" class="cf">
+<main>
 
 <?php
 if(have_posts()): while(have_posts()): the_post();
@@ -28,10 +28,12 @@ endif;
 <section class="page-entry">
 <div class="entry">
 <h1 class="highlight">Gallery</h1>
-</div><!-- .entry -->
 <?php echo $page_entry; ?>
+</div><!-- .entry -->
 </section>
 <?php endif; ?>
+
+<section id="gallery" class="cf">
 
 <?php
 $attachments = array(
@@ -60,6 +62,8 @@ if(have_posts()): while(have_posts()): the_post();
 <?php endif; ?>
 
 </section><!-- #image -->
+
+</main>
 
 <nav id="navigation">
 <ul>
