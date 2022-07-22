@@ -15,6 +15,14 @@
 <section id="gallery" class="cf">
 
 <?php
+if(have_posts()): while(have_posts()): the_post();
+$page_entry = get_the_content();
+$page_entry = apply_filters( 'the_content', $page_entry );
+$page_entry = str_replace( ']]>', ']]&gt;', $page_entry );
+endwhile;
+else:
+endif;
+
 $attachments = array(
 	'order' => 'ASC',
 	'orderby' => 'menu_order',
@@ -28,6 +36,15 @@ $attachments = array(
 query_posts($attachments);
 if(have_posts()): while(have_posts()): the_post();
 ?>
+
+<?php if($page_entry): ?>
+<section class="page-entry">
+<div class="entry">
+<h1 class="highlight">Gallery</h1>
+</div><!-- .entry -->
+<?php echo $page_entry; ?>
+</section>
+<?php endif; ?>
 
 <figure>
 <a href="<?php the_permalink(); ?>">

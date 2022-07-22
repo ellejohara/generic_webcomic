@@ -177,7 +177,7 @@ hr {
 	padding-right: 0;
 }
 
-#gallery, #image, #content {
+#gallery, #image, #content, #characters {
     padding: 0.25em 0;
 }
 
@@ -192,6 +192,19 @@ hr {
 #gallery figure img {
     aspect-ratio: 7 / 9;
     object-fit: cover;
+}
+
+#characters .page-entry, #gallery .page-entry {
+    margin-bottom: 1em;
+    display: block;
+}
+
+#characters .page-entry .entry, #gallery .page-entry .entry {
+    padding: 0.25em 0;
+}
+
+#characters .page-entry .entry p, #gallery .page-entry .entry p {
+    padding: 0.5em 0;
 }
 
 #characters article {
@@ -246,10 +259,12 @@ hr {
 #content main .entry ol {
     list-style: none;
     counter-reset: chapter-count;
+    margin: 0.5em 0;
 }
 
 #content main .entry ol li {
     counter-increment: chapter-count;
+    margin: 0.25em 0;
 }
 
 #content main .entry ol li::before {
