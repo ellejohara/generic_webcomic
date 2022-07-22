@@ -56,7 +56,8 @@ function jo_populate_metabox($post) {
 
 function hide_jo_metabox($hidden, $screen) {
 	if(('post' == $screen->base) && ('my-custom-post_type')) {
-		$hidden = 'jo-images-metabox';
+        $hidden = array('slugdiv','postcustom','trackbacksdiv','commentstatusdiv','commentsdiv','authordiv','revisionsdiv');
+		$hidden[] = 'jo-images-metabox';
 	}
 	return $hidden;
 }
