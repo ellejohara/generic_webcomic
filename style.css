@@ -169,6 +169,14 @@ hr {
     padding: 0 0.25em;
 }
 
+#header nav ul li:first-child {
+	padding-left: 0;
+}
+
+#header nav ul li:last-child {
+	padding-right: 0;
+}
+
 #gallery, #image, #content {
     padding: 0.25em 0;
 }
@@ -184,6 +192,20 @@ hr {
 #gallery figure img {
     aspect-ratio: 7 / 9;
     object-fit: cover;
+}
+
+#characters article {
+	margin-bottom: 1.5em;
+}
+
+#characters article figure {
+	margin-right: 1.5em;
+	max-width: 40%;
+	float: left;
+}
+
+#characters article section header {
+	margin-bottom: 1em;
 }
 
 #content {

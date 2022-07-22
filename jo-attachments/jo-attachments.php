@@ -53,4 +53,12 @@ function jo_populate_metabox($post) {
     }
     echo '</ul>';
 }
+
+function hide_jo_metabox($hidden, $screen) {
+	if(('post' == $screen->base) && ('my-custom-post_type')) {
+		$hidden = 'jo-images-metabox';
+	}
+	return $hidden;
+}
+add_filter('default_hidden_meta_boxes', 'hide_jo_metabox', 10, 2);
 ?>

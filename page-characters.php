@@ -12,12 +12,12 @@
 
 <?php get_header(); ?>
 
-<section id="gallery" class="cf">
+<section id="characters" class="cf">
 
 <?php
 $attachments = array(
 	'order' => 'ASC',
-	'orderby' => 'date',
+	'orderby' => 'menu_order',
 	'post_type' => 'attachment',
 	'post_status' => array('publish','draft','inherit'),
 	'numberposts' => -1,
@@ -29,11 +29,21 @@ query_posts($attachments);
 if(have_posts()): while(have_posts()): the_post();
 ?>
 
+<article class="cf">
 <figure>
 <a href="<?php the_permalink(); ?>">
 <?php echo wp_get_attachment_image($post->ID, 'thumbnail'); ?>
 </a>
 </figure>
+<section>
+<header>
+<h2><a href="<?php the_permalink(); ?>"><?php echo the_excerpt(); ?></a></h2>
+</header>
+<div class="entry">
+<?php echo get_the_content(); ?>
+</div><!-- .entry -->
+</section>
+</article>
 
 <?php endwhile; ?>
 <?php else: ?>
@@ -56,7 +66,6 @@ if(have_posts()): while(have_posts()): the_post();
 <li><span>&rsaquo;</span></li>
 <?php endif; ?>
 </ul>
-
 </nav>
 
 <?php get_footer(); ?>
