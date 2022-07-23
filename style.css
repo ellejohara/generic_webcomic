@@ -76,11 +76,13 @@ body {
     min-width: 320px;
 	font-family:
 		"Avenir Next",
+        "Segoe UI",
 		Avenir,
-		"Century Gothic",
+        Gadugi,
 		"Helvetica Neue Light",
 		"Helvetica Neue",
 		Helvetica,
+        Calibri,
 		"Lucida Grande",
 		Arial,
 		sans-serif;
