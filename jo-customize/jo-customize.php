@@ -407,7 +407,7 @@ function jo_get_color_scheme_css($colors) {
     $theme_credit = get_theme_mod('theme_credit');
     $theme_css = '';
     if(!$theme_credit) {
-        $theme_css = '#generic-webcomic-credit { display: block; }';
+        $theme_css = '#generic-webcomic-credit { display: none; }';
     }
     
     $header_bg = get_theme_mod('header_bg');
