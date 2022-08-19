@@ -208,7 +208,11 @@ function jo_list_chapters() {
         $posts = $query->posts;
         $post_ID = $posts[0]->ID;
         $permalink = get_permalink($post_ID);
-        $output .= '<li><a href="' . $permalink . '">' . $category->name . '</a></li>' . "\n";
+        $chapter_label = $category->description;
+        if(!$chapter_label) {
+            $chapter_label = $category->name;
+        }
+        $output .= '<li><a href="' . $permalink . '">' . $chapter_label . '</a></li>' . "\n";
     endforeach;
     $output .= "</ol>\n";
 
