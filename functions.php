@@ -63,7 +63,7 @@ function jo_customize_image_sizes($sizes) {
 	return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'jo_customize_image_sizes');
-add_filter('max_srcset_image_width', create_function('', 'return 1;'));
+add_filter('max_srcset_image_width', fn() => 1);
 
 /* Remove inline thumbnail image sizes */
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
